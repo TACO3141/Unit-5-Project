@@ -1,3 +1,5 @@
+// Chosen car: Bentley Continental GT W12
+// Fuel efficiency of 13.1
 public class Car
 {
   private double efficiency;
