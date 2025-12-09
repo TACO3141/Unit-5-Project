@@ -22,7 +22,25 @@ public class Car
   {
     if (litres + fill > maxFuel)
     {
-      System.out.println(
+      System.out.println("Sorry, that's too much fuel for this tank. You currently have " + litres + "/" + maxFuel + "L. Your gas tank will now be filled completely.");
+      litres = maxFuel;
+    }
+    else
+    {
+      litres += fill;
+      System.out.println("Gas tank filled. Current fuel amount: " + litres + "/" + maxFuel + "L.")
+    }
+    public void takeATrip(double distance)
+    {
+      usedFuel = efficiency * (distance / 100);
+      if (litres - usedFuel < minFuel)
+      {
+        System.out.println("You can't drive that distance, you don't have enough fuel as you must keep at least 9L in reserve.");
+      }
+      else
+      {
+        //lazy
+      }
     }
   }
 }
