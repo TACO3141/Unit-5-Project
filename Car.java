@@ -30,17 +30,25 @@ public class Car
       litres += fill;
       System.out.println("Gas tank filled. Current fuel amount: " + litres + "/" + maxFuel + "L.")
     }
+    
     public void takeATrip(double distance)
     {
       usedFuel = efficiency * (distance / 100);
       if (litres - usedFuel < minFuel)
       {
-        System.out.println("You can't drive that distance, you don't have enough fuel as you must keep at least 9L in reserve.");
+        System.out.println("You can't drive that distance, you don't have enough fuel (you must keep at least 9L in reserve.)");
       }
       else
       {
-        //lazy
+        litres = litres - usedFuel;
+        System.out.println("You drove " + distance + " KM.");
       }
     }
+
+    public double reportFuel()
+    {
+      return litres;
+    }
+    
   }
 }
