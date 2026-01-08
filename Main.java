@@ -12,13 +12,13 @@ public class Main
     Car car = new Car(efficiency);
     while (continueLoop = true)
     {
-      System.out.println("Select whether you want to FILL, DRIVE or CHECKFUEL.");
+      System.out.println("Select whether you want to FILLFUEL, DRIVE, CHECKFUEL or FILLTIRES.");
       input = scan.nextLine();
-      if (input.toUpperCase().equals("FILL"))
+      if (input.toUpperCase().equals("FILLFUEL"))
       {
         System.out.println("How many litres do you want to fill up? (Enter a decimal):");
         input = scan.nextDouble();
-        car.fillUp(input);
+        car.fillUpFuel(input);
         System.out.println("Do you want to continue?");
         input = scan.nextLine();
         if (input.toUpperCase().equals("NO"))
@@ -48,10 +48,20 @@ public class Main
           continueLoop = false;
         }
       }
+      else if (input.toUpperCase().equals("FILLTIRES"))
+      {
+        car.fillUpTires();
+        System.out.println("Do you want to continue?");
+        input = scan.nextLine();
+        if (input.toUpperCase().equals("NO"))
+        {
+          continueLoop = false;
+        }
+      }
       else
       {
-        System.out.print("You did not type FILL, DRIVE or CHECKFUEL.")
-          System.out.println("Do you want to continue?");
+        System.out.print("You did not type FILLFUEL, DRIVE, CHECKFUEL or FILLTIRES.")
+        System.out.println("Do you want to continue?");
         input = scan.nextLine();
         if (input.toUpperCase().equals("NO"))
         {
