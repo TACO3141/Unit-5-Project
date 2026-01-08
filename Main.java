@@ -19,16 +19,44 @@ public class Main
         System.out.println("How many litres do you want to fill up? (Enter a decimal):");
         input = scan.nextDouble();
         car.fillUp(input);
+        System.out.println("Do you want to continue?");
+        input = scan.nextLine();
+        if (input.toUpperCase().equals("NO"))
+        {
+          continueLoop = false;
+        }
       }
       else if (input.toUpperCase().equals("DRIVE"))
       {
         System.out.println("Enter the distance (decimal):");
         input = scan.nextDouble();
         car.takeATrip(input);
+        System.out.println("Do you want to continue?");
+        input = scan.nextLine();
+        if (input.toUpperCase().equals("NO"))
+        {
+          continueLoop = false;
+        }
       }
       else if (input.toUpperCase().equals("CHECKFUEL"))
       {
         System.out.println(car.reportFuel());
+        System.out.println("Do you want to continue?");
+        input = scan.nextLine();
+        if (input.toUpperCase().equals("NO"))
+        {
+          continueLoop = false;
+        }
+      }
+      else
+      {
+        System.out.print("You did not type FILL, DRIVE or CHECKFUEL.")
+          System.out.println("Do you want to continue?");
+        input = scan.nextLine();
+        if (input.toUpperCase().equals("NO"))
+        {
+          continueLoop = false;
+        }
       }
     }
   }
